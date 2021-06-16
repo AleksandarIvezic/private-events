@@ -12,7 +12,7 @@ class EventsController < ApplicationController
         @event = current_user.events.build(event_params)
 
         if @event.save
-            redirect_to "users#show"
+            redirect_to @user(current_user.id)
         else
             render :new
         end
