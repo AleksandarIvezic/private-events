@@ -3,7 +3,4 @@ class EventsController < ApplicationController
         @events=Event.all
     end
 
-    def show
-        @event= current_user.events
-    end
 end
