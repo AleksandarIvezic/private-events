@@ -1,10 +1,21 @@
 <h1>List of events</h1>
 
-<% @events.each do |event|%>
-    <h3><%= event.title%></h3>
-    <p><%= event.details%></p>
-    <p><%= event.event_date%></p>
 
-    
-    <%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%>
+<h2>Past events</h2>
+<%@events.past.each do |event|%>
+
+  <h4><%= event.title%></h4>
+  <p><%= event.details%></p>
+  <p><%= event.event_date%></p>
+
+  <%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%>
+  <% end %>
+<h2>Upcoming events</h2>
+<%@events.upcoming.each do |event|%>
+
+  <h4><%= event.title%></h4>
+  <p><%= event.details%></p>
+  <p><%= event.event_date%></p>
+
+  <%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%>
 <% end %>
