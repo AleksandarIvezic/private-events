@@ -13,7 +13,18 @@
 <h1>Your attending events</h1>
 
 <% current_user.attended_events.each do |event|%>
+    <% if  event.event_date < DateTime.now%>
+    <h2>Past</h2>
     <h3><%= event.title%></h3>
     <p><%= event.details%></p>
     <p><%= event.event_date%></p>
+
+    <%else%>
+    <h2>Upcoming</h2>
+    <h3><%= event.title%></h3>
+    <p><%= event.details%></p>
+    <p><%= event.event_date%></p>
+
+    <% end %>
+
 <% end %>
