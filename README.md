@@ -1,5 +1,5 @@
 ## private-events
-In this project, we built an project similar to a private [Eventbrite](https://www.eventbrite.com/) which allows users to create events. Users can create events and attend to created Events.Also they can check who is going to attend each Event. 
+In this project, we built a project similar to a private [Eventbrite](https://www.eventbrite.com/) which allows users to create events. Users can create events and attend to created Events.Also they can check who is going to attend each Event. 
 This is part of the Project: Private Events in The Odin Project’s Ruby on Rails Curriculum. Find it at [Project: Private Events](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/associations#project-private-events)
 
 ## Built with
