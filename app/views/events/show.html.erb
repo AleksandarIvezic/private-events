@@ -4,6 +4,9 @@
 
     <li><%= @event.event_date%></li>
 
+<h2>Attendees of this event</h2>
+   <ul>
     <% @attending_events.each do |event|%>
-        <%= event.attendee.email %>
+        <li><%= event.attendee.email %></li>
     <% end %>
+    </ul>

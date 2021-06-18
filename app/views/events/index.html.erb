@@ -5,17 +5,13 @@
 <%@events.past.each do |event|%>
 
   <h4><%= event.title%></h4>
-  <p><%= event.details%></p>
-  <p><%= event.event_date%></p>
-
-  <%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%>
+  <p><%=link_to "View details", event_path(event)%></p>
+  <p><%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%></p>
   <% end %>
 <h2>Upcoming events</h2>
 <%@events.upcoming.each do |event|%>
 
   <h4><%= event.title%></h4>
-  <p><%= event.details%></p>
-  <p><%= event.event_date%></p>
-
-  <%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%>
+   <p><%=link_to "View details", event_path(event)%></p>
+  <p><%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%></p>
 <% end %>
