@@ -7,5 +7,4 @@ class Event < ApplicationRecord
   has_many :attendees, through: :event_attendings
   scope :past, -> { where('event_date < ?', DateTime.now) }
   scope :upcoming, -> { where('event_date > ?', DateTime.now) }
-
 end
