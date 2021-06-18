@@ -8,3 +8,12 @@
 <% end %>
 
 </ul>
+
+
+<h1>Your attending events</h1>
+
+<% current_user.attended_events.each do |event|%>
+    <h3><%= event.title%></h3>
+    <p><%= event.details%></p>
+    <p><%= event.event_date%></p>
+<% end %>
