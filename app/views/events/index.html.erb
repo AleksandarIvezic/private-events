@@ -1,8 +1,10 @@
 <h1>List of events</h1>
 
 <% @events.each do |event|%>
-
-    <p><%= event.title%></p>
+    <h3><%= event.title%></h3>
     <p><%= event.details%></p>
     <p><%= event.event_date%></p>
+
+    
+    <%=link_to "Attend", event_attendings_path(event_id: event.id), method: :create%>
 <% end %>
