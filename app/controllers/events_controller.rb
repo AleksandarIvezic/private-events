@@ -23,6 +23,12 @@ class EventsController < ApplicationController
         @attending_events = EventAttending.where(attended_event_id: Event.find(params[:id]))
     end
 
+    def destroy
+        @event = Event.find(params[:id])
+        @event.destroy
+        redirect_to user_path(current_user[:id])
+    end
+
     private
 
     def event_params
