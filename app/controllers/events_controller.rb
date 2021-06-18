@@ -18,6 +18,20 @@ class EventsController < ApplicationController
         end
     end
 
+     def edit
+        @event = current_user.events.build
+    end
+
+    def update
+        @event = current_user.events.build
+        if @event.update
+            redirect_to event_path(@event[:id])
+        else
+            render :edit
+        end
+    end
+
+
     def show
         @event = Event.find(params[:id])
         @attending_events = EventAttending.where(attended_event_id: Event.find(params[:id]))
