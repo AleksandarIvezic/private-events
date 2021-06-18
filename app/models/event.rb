@@ -8,11 +8,4 @@ class Event < ApplicationRecord
   scope :past, -> { where('event_date < ?', DateTime.now) }
   scope :upcoming, -> { where('event_date > ?', DateTime.now) }
 
-  # def self.past
-  #     where("event_date < ?", DateTime.now)
-  # end
-
-  # def self.upcoming
-  #     where("event_date > ?", DateTime.now)
-  # end
 end
