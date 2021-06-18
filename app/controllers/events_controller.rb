@@ -19,11 +19,11 @@ class EventsController < ApplicationController
     end
 
      def edit
-        @event = current_user.events.build
+        @event = Event.find(params[:event_id])
     end
 
     def update
-        @event = current_user.events.build
+        @event = Event.find(params(:id))
         if @event.update
             redirect_to event_path(@event[:id])
         else
