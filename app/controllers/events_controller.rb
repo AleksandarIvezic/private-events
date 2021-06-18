@@ -18,8 +18,9 @@ class EventsController < ApplicationController
         end
     end
 
-    def show 
+    def show
         @event = Event.find(params[:id])
+        @attending_events = EventAttending.where(attended_event_id: Event.find(params[:id]))
     end
 
     private
