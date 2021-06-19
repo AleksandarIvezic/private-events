@@ -1,0 +1,34 @@
+<h1>New event</h1>
+
+<%=form_with model: @event do |f|%>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
+    <% @event.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br />
+    <%= f.text_area :details, autocomplete: "details" %>
+    <% @event.errors.full_messages_for(:details).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_date %><br />
+    <%= f.date_field :event_date,  autocomplete: "event_date" %>
+    <% @event.errors.full_messages_for(:event_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+
+
+    <div class="actions">
+    <%= f.submit "Submit Event" %>
+  </div>
+  <% end %>
+  

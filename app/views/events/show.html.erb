@@ -1,0 +1,12 @@
+<h1><%=@event.title%></h1>
+
+    <p><%= @event.details%></p>
+
+    <li><%= @event.event_date%></li>
+
+<h2>Attendees of this event</h2>
+   <ul>
+    <% @attending_events.each do |event|%>
+        <li><%= event.attendee.email %></li>
+    <% end %>
+    </ul>
